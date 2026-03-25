@@ -1,0 +1,39 @@
+@use "../../css/variables.module" as *;
+
+.excalidraw {
+  .FontPicker__container {
+    display: grid;
+    grid-template-columns: calc(1rem + 3 * var(--default-button-size)) 1rem 1fr; // calc ~ 2 gaps + 4 buttons
+    align-items: center;
+
+    @include isMobile {
+      max-width: calc(
+        2rem + 4 * var(--default-button-size)
+      ); // 4 gaps + 4 buttons
+    }
+
+    &--compact {
+      display: block;
+      grid-template-columns: none;
+    }
+  }
+}
+
+.excalidraw {
+  .font-picker-list__add-font-btn {
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--color-gray-20);
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    margin-top: 0.25rem;
+
+    &:hover {
+      background: var(--color-gray-10);
+    }
+  }
+}
